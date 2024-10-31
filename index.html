@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Todo app</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="main.js" defer></script>
+</head>
+<body>
+	<header class="head">
+		<div class="head__top">
+			<h1 class="head__top__title">TODO</h1>
+			<img class="head__top__icon" src="images/icon-moon.svg"
+				alt="">
+		</div>
+
+		<div class="head__body">
+			<div class="circle add"></div>
+			<input class="head__body__input"
+			 type="text" placeholder="create a new todo..">
+		</div>
+	</header>
+
+	<main>
+		<ul class="list">
+
+
+			<!-- 
+			<li class="list_item">
+				<div class="list_item__item">
+					<div class="circle check"></div>
+					<span class="task">Read for 1 hour</span>
+					<img class="cross-icon" src="images/icon-cross.svg" alt="" srcset="">
+				</div>
+			</li>
+
+			<li class="list_item">
+				<div class="list_item__item ">
+					<div class="circle"></div>
+					<span class="task">Read for 1 hour</span>
+					<img class="cross-icon" src="images/icon-cross.svg" alt="" srcset="">
+				</div>
+			</li>
+
+			<li class="list_item">
+				<div class="list_item__item">
+					<div class="item_task">
+						<div class="circle"></div>
+						<span class="task">Read for 1 hour an</span>
+					</div>
+					
+					<img class="cross-icon" 
+					src="images/icon-cross.svg" alt="" srcset="">
+				</div>
+			</li>
+		-->
+
+			<li class="list_item" id="last-in-mobile">
+				<div class="list_item__item clear">
+					<p>
+						<span>5</span>items left
+					</p>
+					<span>Clear Completed</span>
+				</div>
+			</li>
+
+			<li class="list_item" id="last-in-desktop">
+				<div class="list_item__item clear">
+					<p class="item_number">
+						<span>5</span>items left
+					</p>
+					<span id="all" class="active">All</span>
+					<span id="active" class="">Active</span>
+					<span id="completed" class="">Completed</span>
+					<span id="clear_completed" class="">Clear Completed</span>
+				</div>
+			</li>
+		</ul>
+		
+		<div class="resume_info list_item__item">
+			<span>All</span>
+			
+			<span>Active</span>
+
+			<span>Completed</span>
+		</div>
+
+		<div class="info">
+			<span>Drag and drop to reorder list</span>
+		</div>
+	</main>
+</body>
+</html>
