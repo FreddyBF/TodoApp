@@ -1,5 +1,4 @@
 
-
 const addTask = document.querySelector(".add");
 
 const taskInput = document.querySelector(".head__body__input");
@@ -44,7 +43,7 @@ function createTask(text) {
     ilElement.appendChild(divElement);
     
     spanElement.textContent = text;
-    const a = document.querySelector("#last-in-desktop");
+    const a = document.querySelector("#last-in-mobile");
     tasks.insertBefore(ilElement,a);
     taskInput.value = "";
 }
