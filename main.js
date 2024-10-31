@@ -48,10 +48,10 @@ function createTask(text) {
     taskInput.value = "";
 }
 
-addTask.addEventListener("click", ()=>{
+taskInput.addEventListener("keydown", (event)=>{
     let text = taskInput.value;
-
-    if(text !== "")
+    
+    if(text !== "" && event.key === "Enter")
         createTask(text);
 });
 
