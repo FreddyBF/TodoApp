@@ -55,6 +55,11 @@ function deleteTask() {
     cross.addEventListener('touchstart', ()=>{
         const ilElement = cross.parentElement;
         ilElement.classList.add('main__logo--delete');
+        if(countTask!=0) {
+            let value =  --countTask;
+            items_desk.textContent = value.toString();
+            items_mob.textContent = value.toString();
+        }
         
     });
 }
@@ -62,7 +67,6 @@ function deleteTask() {
 
 function clearCompleted() {
     const clear = document.querySelectorAll('.clear');
-    console.log(clear);
     clear.forEach(el =>{
         el.addEventListener("click", ()=>{
             tasks = document.querySelectorAll('.main__task--finish');
