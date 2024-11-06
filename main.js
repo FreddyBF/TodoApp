@@ -7,6 +7,10 @@ const list = document.querySelector('.main__list');
 
 const input = document.querySelector(".head__input input");
 
+let items_desk = document.getElementById('items-desk'); 
+let items_mob = document.getElementById('items-mob');
+
+let countTask = 0;
 
 function createListItem(task) {
     return `
@@ -21,6 +25,13 @@ function createListItem(task) {
 }
 
 
+function active() {
+    const activeTask = document.querySelector('.active');
+    activeTask.addEventListener("click", ()=>{
+        clearCompleted();
+    });
+}
+
 function finishTask() {
     const completed = document.querySelector('.main__circle');
     const task = document.querySelector(".main__task");
@@ -28,6 +39,9 @@ function finishTask() {
         completed.addEventListener("click", ()=>{
             completed.classList.add("main__circle--check");
             task.classList.add("main__task--finish");
+            let value =  --countTask;
+            items_desk.textContent = value.toString();
+            items_mob.textContent = value.toString();
         });
     }
 }
@@ -36,10 +50,22 @@ function finishTask() {
 function deleteTask() {
     const cross = document.querySelector('.main__logo');
     //touchstart == click
-    cross.addEventListener('click', ()=>{
+    cross.addEventListener('touchstart', ()=>{
         const ilElement = cross.parentElement;
         ilElement.classList.add('main__logo--delete');
         
+    });
+}
+
+
+function clearCompleted() {
+    const clear = document.getElementById('clear');
+    clear.addEventListener("click", ()=>{
+        tasks = document.querySelectorAll('.main__task--finish');
+        tasks.forEach(element => {
+            const div = element.parentElement;
+            div.classList.add('main__list-item--delete');  
+        });
     });
 }
 
@@ -50,8 +76,12 @@ input.addEventListener("keydown", (event)=>{
         const li = createListItem(task);
         const ul = document.querySelector('.main__list');
         ul.insertAdjacentHTML('afterbegin', li);
+        let value =  ++countTask;
+        items_desk.textContent = value.toString();
+        items_mob.textContent = value.toString();
         finishTask();
         deleteTask();
+        clearCompleted();
     }
 });
 

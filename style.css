@@ -204,7 +204,8 @@ body {
     text-decoration: line-through;
 }
 
-.main__logo--delete {
+.main__logo--delete,
+.main__list-item--delete{
     display: none;
 }
 
