@@ -10,7 +10,7 @@
     --text-color1:hsl(236, 9%, 61%);
     --title-color:hsl(0, 0%, 98%);
     --bg-mobile-image: url("images/bg-mobile-light.jpg");
-    --bg-mobile-image:url("images/bg-desktop-light.jpg");
+    --bg-desktop-image:url("images/bg-desktop-light.jpg");
     font-family: "Josefin Sans", sans-serif;
 }
 
@@ -30,7 +30,7 @@
 
     --title-color: hsl(236, 33%, 92%);
     --bg-mobile-image: url("images/bg-mobile-dark.jpg");
-    --bg-mobile-image:url("images/bg-desktop-dark.jpg");
+    --bg-desktop-image:url("images/bg-desktop-dark.jpg");
 
 
 color: hsl(235, 21%, 11%)
@@ -89,11 +89,12 @@ body {
 
 .head__circle, 
 .main__circle {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background-color: transparent;
     border: 1px solid var(--border-color);
+    cursor: pointer;
 }
 
 
@@ -198,6 +199,15 @@ body {
     color: blue;
 }
 
+
+.main__task--finish {
+    text-decoration: line-through;
+}
+
+.main__logo--delete {
+    display: none;
+}
+
 .main__paragrafo {
     text-align: center;
     margin-top: 20px;
@@ -209,6 +219,10 @@ body {
 /*RESPONSIVIDADE*/
 @media(min-width: 995px) {
 
+    .head {
+        background-image: var(--bg-desktop-image);
+    }
+
     .head__logo img {
         cursor: pointer;
     }
@@ -217,12 +231,24 @@ body {
         display: none;
     }
 
+    .main__circle:hover {
+        border-radius: 50%;
+        border: 1px solid transparent;
+        border-image:linear-gradient(
+            hsl(192, 100%, 67%),
+            hsl(280, 87%, 65%)
+        );
+        border-image-slice: 1;
+        overflow: hidden;
+    }
+
     .main__desktop span,
     .main__desktop p {
         cursor: pointer;
     }
 
-    .main__list-item {
+    .main__list-item span,
+    .main__list-item img{
         cursor: pointer;
     }
 

@@ -20,6 +20,29 @@ function createListItem(task) {
     `
 }
 
+
+function finishTask() {
+    const completed = document.querySelector('.main__circle');
+    const task = document.querySelector(".main__task");
+    if(completed != null) {
+        completed.addEventListener("click", ()=>{
+            completed.classList.add("main__circle--check");
+            task.classList.add("main__task--finish");
+        });
+    }
+}
+
+
+function deleteTask() {
+    const cross = document.querySelector('.main__logo');
+    //touchstart == click
+    cross.addEventListener('click', ()=>{
+        const ilElement = cross.parentElement;
+        ilElement.classList.add('main__logo--delete');
+        
+    });
+}
+
 input.addEventListener("keydown", (event)=>{
     if(event.key === "Enter") {
         const task = input.value;
@@ -27,6 +50,8 @@ input.addEventListener("keydown", (event)=>{
         const li = createListItem(task);
         const ul = document.querySelector('.main__list');
         ul.insertAdjacentHTML('afterbegin', li);
+        finishTask();
+        deleteTask();
     }
 });
 
@@ -45,5 +70,15 @@ changeTheme.addEventListener('click', ()=>{
         html.dataset.theme = 'light';
     }
 });
+
+
+
+
+
+
+
+
+
+
 
 
