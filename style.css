@@ -115,13 +115,12 @@ body {
 
 .head__input input {
     width: 100%;
-    padding: .8rem 1rem;
+    padding: 1rem 1rem;
     outline: none;
     border: 0;
     caret-color: blue;
     background-color: transparent;
     font-family: "Josefin Sans", sans-serif;
-
 }
 
 
@@ -142,6 +141,7 @@ body {
     margin: 0 auto;
     background-color: var(--bg-color-list);
     border-radius: 4px;
+    box-shadow: 5px 4px transparent;
 }
 
 .main__list-item {
@@ -149,7 +149,7 @@ body {
     align-items: center;
     gap: 10px;
     border-bottom: 1px solid var(--border-color);
-    padding: .8rem .5rem;
+    padding: 1rem .5rem;
 }
 
 .main__list-item.main__mobile {
@@ -167,7 +167,7 @@ body {
 
 .main__logo {
     position: fixed;
-    left: calc(100% - 50px);
+    left: calc(100% - 60px);
     line-height: 50px;
 }
 
