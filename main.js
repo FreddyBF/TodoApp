@@ -39,9 +39,11 @@ function finishTask() {
         completed.addEventListener("click", ()=>{
             completed.classList.add("main__circle--check");
             task.classList.add("main__task--finish");
-            let value =  --countTask;
-            items_desk.textContent = value.toString();
-            items_mob.textContent = value.toString();
+            if(countTask!=0) {
+                let value =  --countTask;
+                items_desk.textContent = value.toString();
+                items_mob.textContent = value.toString();
+            }
         });
     }
 }
@@ -59,18 +61,21 @@ function deleteTask() {
 
 
 function clearCompleted() {
-    const clear = document.getElementById('clear');
-    clear.addEventListener("click", ()=>{
-        tasks = document.querySelectorAll('.main__task--finish');
-        tasks.forEach(element => {
-            const div = element.parentElement;
-            div.classList.add('main__list-item--delete');  
+    const clear = document.querySelectorAll('.clear');
+    console.log(clear);
+    clear.forEach(el =>{
+        el.addEventListener("click", ()=>{
+            tasks = document.querySelectorAll('.main__task--finish');
+            tasks.forEach(element => {
+                const div = element.parentElement;
+                div.classList.add('main__list-item--delete');  
+            });
         });
     });
 }
 
 input.addEventListener("keydown", (event)=>{
-    if(event.key === "Enter") {
+    if(event.key === "Enter" && input.value!=="") {
         const task = input.value;
         input.value = '';
         const li = createListItem(task);
