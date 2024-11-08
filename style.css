@@ -167,13 +167,12 @@ body {
 }
 
 .main__logo {
-    position: fixed;
-    left: calc(100% - 60px);
-    line-height: 50px;
+    position: sticky;
+    left: calc(100% - 50px);
 }
 
 .main__logo img {
-    width: 10px;
+    width: 9px;
 }
 
 .main__item {
@@ -216,8 +215,17 @@ body {
 }
 
 
-
 /*RESPONSIVIDADE*/
+
+/*Tablet*/
+@media(min-width:589px) {
+    .main__logo {
+        position: sticky;
+        left: calc(100% - 35px);
+    }
+}
+
+/*Desktop*/
 @media(min-width: 995px) {
 
     .head {
