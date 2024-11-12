@@ -21,7 +21,7 @@ function createListItem(task) {
 					<img src="./images/icon-cross.svg" alt="eliminar">
 				</div>
 		</li>
-    `
+    `;
 }
 
 
@@ -52,7 +52,7 @@ function finishTask() {
 function deleteTask() {
     const cross = document.querySelector('.main__logo');
     //touchstart == click
-    cross.addEventListener('touchstart', ()=>{
+    cross.addEventListener('click', ()=>{
         const ilElement = cross.parentElement;
         ilElement.classList.add('main__logo--delete');
         if(countTask!=0) {

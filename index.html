@@ -9,76 +9,78 @@
 	<script src="main.js" defer></script>
 </head>
 <body>
-
 	<header class="head">
 		<div class="head__item1">
-			<h1 class="head__title">Todo</h1>
-			<div class="head__logo">
-				<img class="head__logo--moon" 
-					src="./images/icon-moon.svg" alt="">
-			</div>
+			<h1 class="head__title">TODO</h1>
+			<img class="head__image--mod" src="./images/icon-moon.svg"
+			 alt="">
+		</div>
+		<div class="head__item2">
+			<input type="checkbox" class="head__input">
+			<input class="head__input--text" type="text" 
+					placeholder="Create a new todo...">
 		</div>
 
-		<div class="head__item2">
-			<div class="head__circle"></div>
-			<div class="head__input">
-				<input type="text" 
-				placeholder="Create a new todo...">
-			</div>
-		</div>
 	</header>
 
-	<main class="main">
-		<ul class="main__list">
-			<!--
-			<li class="main__list-item">
-				<div class="main__circle main__circle--check"></div>
-				<span class="main__task main__task--finish">ola</span>
-				<div class="main__logo">
-					<img main__logo--delete src="./images/icon-cross.svg" alt="">
-				</div>
+	<main class="container">
+		<ul class="container__list">
+			<li class="container__list-item">
+				<label for="completed">
+					<input class="container__list-item--finish" 
+							type="checkbox" id="completed">
+					<span>Completed to app on front</span>
+				</label>
+				<img class="container--delete" src="./images/icon-cross.svg" alt="">
 			</li>
 
-			<li class="main__list-item">
-				<div class="main__circle"></div>
-				<span class="main__task">ola</span>
-				<div class="main__logo">
-					<img src="" alt="">
-				</div>
+			<li class="container__list-item">
+				<label for="completed">
+					<input type="checkbox" id="completed">
+					Online js course
+				</label>
+				<img class="container--delete" src="./images/icon-cross.svg" alt="">
 			</li>
 
-			<li class="main__list-item">
-				<div class="main__circle"></div>
-				<span class="main__task">ola</span>
-				<div class="main__logo">
-					<img src="" alt="">
-				</div>
-			</li>
-		-->
-			<li class="main__list-item main__mobile">
-				<p>
-					<span id="items-mob">0</span> items left
-				</p>
-				<span class="clear">Clear Completed</span>
+
+			<li class="container__list-item">
+				<label for="completed">
+					<input type="checkbox" id="completed">
+					Historia de Angola
+				</label>
+				<img class="container--delete" src="./images/icon-cross.svg" alt="">
 			</li>
 
-			<li class="main__list-item main__desktop">
-				<p>
-					<span id="items-desk">0</span> items left
-				</p>
-				<span id="all" class="main__item--active">All</span>
-				<span id="active">Active</span>
-				<span id="completed">Completed</span>
-				<span class="clear">Clear Completed</span>
+			<li class="container__list-item">
+				<label for="completed">
+					<input type="checkbox" id="completed">
+					bootcamp Nexa-eng de prompt
+				</label>
+				<img class="container--delete" src="./images/icon-cross.svg" alt="">
+			</li>
+
+			<li class="container__list-item container--mobile">
+				<p><span>5</span>items lefts</p>
+				<p>Clear completed</p>
+			</li>
+
+			<li class="container__list-item  container--desktop">
+				<p><span>5</span>items lefts</p>
+				<span class="container__footer--select">All</span>
+				<span>Active</span>
+				<span>Completed</span>
+				<p>Clear completed</p>
 			</li>
 		</ul>
-		<div class="main__item">
-			<span id="all" class="main__item--active">All</span>
-			<span id="active">Active</span>
-			<span id="completed">Completed</span>
-		</div>
-		<p class="main__paragrafo">Drag and drop  to reorder list</p>
-	</main>
 
+		<div class="container__footer">
+			<span class="container__footer--select">All</span>
+			<span>Active</span>
+			<span>Completed</span>
+		</div>
+
+		<p class="container__drag">Drag and drop to reorder list</p>
+
+	</main>
 </body>
 </html>
